@@ -70,7 +70,7 @@ const HomePageHeader = () => {
           <div className="top">
             <h1 className="title">A Lifetime of Discounts? It&apos;s Genius.</h1>
             <p className="desc">
-              Get rewarded for your travels - unlock instant savings of
+              Get rewarded for your travels - Unlock instant savings of
               <b> 10% </b>or more with a<b> Free MERN Bookings App Account</b>
             </p>
             <button className="btn">Sign In / Register</button>
