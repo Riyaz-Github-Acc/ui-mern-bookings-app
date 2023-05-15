@@ -20,7 +20,7 @@ dist-ssr
 .prettierignore
 
 # ESLint
-.eslintrc
+.eslintrc.cjs
 .eslintignore
 
 # Editor directories and files
