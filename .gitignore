@@ -11,9 +11,17 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# ENV
 .env
+
+# Prettier
 .prettierrc
-.eslintrc.cjs
+.prettierignore
+
+# ESLint
+.eslintrc
+.eslintignore
 
 # Editor directories and files
 .vscode/*
