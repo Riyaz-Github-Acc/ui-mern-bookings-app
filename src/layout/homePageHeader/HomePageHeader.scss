@@ -1,0 +1,194 @@
+.homePageHeader {
+  header {
+    position: relative;
+    color: var(--white-color);
+    background: var(--primary-color);
+    padding: 10px 0 80px;
+
+    .top {
+      .title {
+        font-size: clamp(1.25rem, 2vw, 1.75rem);
+      }
+
+      .desc {
+        color: var(--white-color);
+        margin: 5px 0;
+      }
+
+      .btn {
+        margin-top: 10px;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .searchField {
+        position: absolute;
+        bottom: -35px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+        width: 100%;
+        max-width: 1180px;
+        background: var(--white-color);
+        border: 3px solid var(--secondary-color);
+        border-radius: 5px;
+        padding: 10px 0;
+
+        .searchItem {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .icon {
+            color: var(--gray-color-1);
+          }
+
+          .searchInput {
+            border: none;
+            outline: none;
+
+            &::placeholder {
+              font-size: 16px;
+            }
+          }
+
+          .searchText {
+            color: var(--gray-color);
+            position: relative;
+          }
+
+          .datePicker {
+            position: absolute;
+            top: 50px;
+            // border: 0.1px solid var(--secondary-color);
+            border-radius: 5px;
+            box-shadow: var(--box-shadow);
+            z-index: 1;
+            overflow: hidden;
+          }
+
+          .options {
+            position: absolute;
+            top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 15px;
+            width: 230px;
+            color: var(--black-color);
+            background: var(--white-color);
+            border-radius: 5px;
+            box-shadow: var(--box-shadow);
+            padding: 10px 20px;
+            z-index: 2;
+
+            .optionItem {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .name {
+                flex: 1;
+                font-weight: 600;
+              }
+
+              .counterWrapper {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .counterBtn {
+                  width: 27px;
+                  height: 27px;
+                  font-weight: 800;
+                  color: var(--primary-color);
+                  background: transparent;
+                  border: 1px solid var(--primary-color);
+                  cursor: pointer;
+
+                  &:disabled {
+                    cursor: not-allowed;
+                  }
+                }
+
+                .counter {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+  .home {
+    header {
+      .bottom {
+        .searchField {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    header {
+      padding: 10px 0 100px;
+
+      .bottom {
+        .searchField {
+          bottom: -50px;
+          row-gap: 15px;
+          padding: 10px 100px;
+
+          .searchItem {
+            .datePicker {
+              top: 45px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .home {
+    header {
+      padding: 10px 0 120px;
+
+      .bottom {
+        .searchField {
+          bottom: -80px;
+          flex-direction: column;
+          align-items: start;
+          padding: 10px 0px 10px 50px;
+
+          .searchItem {
+            .datePicker {
+              top: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

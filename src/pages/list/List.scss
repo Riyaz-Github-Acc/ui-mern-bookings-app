@@ -1,0 +1,105 @@
+.list {
+  scroll-behavior: smooth;
+  margin-top: 25px;
+
+  .container {
+    .listWrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+
+      .listSearch {
+        flex: 1;
+        position: sticky;
+        top: 25px;
+        height: max-content;
+        background: var(--secondary-color);
+        border-radius: 10px;
+        padding: 15px;
+
+        .lsItem {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          margin: 15px 0;
+
+          .lsItemTitle {
+            font-size: 18px;
+            font-weight: 600;
+          }
+
+          .lsInput {
+            height: 35px;
+            font-size: 16px;
+            color: var(--gray-color);
+            padding: 5px 10px;
+            border: none;
+            outline: none;
+          }
+
+          .lsDate {
+            display: flex;
+            align-items: center;
+            height: 35px;
+            font-size: 16px;
+            color: var(--gray-color);
+            background: var(--white-color);
+            padding: 5px 10px;
+            white-space: nowrap;
+            cursor: pointer;
+          }
+
+          .optionsItem {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+
+            label {
+              font-size: 16px;
+              font-weight: 600;
+
+              small {
+                font-weight: 400;
+              }
+            }
+
+            .optionsInput {
+              width: 40%;
+              height: 25px;
+              font-size: 14px;
+              color: var(--gray-color);
+              padding: 5px;
+              border: none;
+              outline: none;
+            }
+          }
+        }
+
+        .btn {
+          width: 100%;
+          margin-top: 10px;
+        }
+      }
+
+      .listResult {
+        flex: 3;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    .container {
+      .listWrapper {
+        flex-direction: column;
+
+        .listSearch {
+          position: static;
+          width: 360px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

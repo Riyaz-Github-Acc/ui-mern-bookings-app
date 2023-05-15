@@ -1,0 +1,11 @@
+.container {
+  width: 1180px;
+  margin: 0 auto;
+}
+
+// Media Queries
+@media (max-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}

@@ -1,0 +1,31 @@
+.mailList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--primary-color);
+  padding: 35px 20px;
+
+  .title {
+    color: var(--white-color);
+  }
+
+  .desc {
+    color: var(--white-color);
+    margin-top: 5px;
+  }
+
+  .subForm {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+
+    input {
+      width: clamp(15rem, 30vw, 25rem);
+      font-size: 16px;
+      border: 1px solid var(--gray-color);
+      outline: none;
+      border-radius: 5px;
+      padding: 3px 10px 3px 20px;
+    }
+  }
+}

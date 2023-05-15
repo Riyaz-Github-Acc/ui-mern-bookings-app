@@ -1,0 +1,30 @@
+footer {
+  margin-top: 50px;
+
+  .footerNav {
+    padding: 35px 0;
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      justify-content: space-between;
+      gap: 25px;
+
+      .footerNavItems {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .link {
+          color: var(--primary-color);
+          transition: var(--transition);
+          cursor: pointer;
+
+          &:hover {
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
+}

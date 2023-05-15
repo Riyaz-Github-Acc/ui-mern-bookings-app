@@ -1,0 +1,71 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
+// Global Styles
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  // Colors
+  --primary-color: #003580;
+  --secondary-color: #fe8d02;
+  --white-color: #fff;
+  --black-color: #000;
+  --gray-color: #808080;
+  --gray-color-1: #333;
+  --primary-light-color: #0071c2;
+  --green-color: #008009;
+
+  // Box Shadow
+  --box-shadow: 0px 0px 10px 1px rgba(126, 126, 126, 0.5);
+
+  // Transition
+  --transition: all 0.5s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: clamp(1rem, 1vw, 1.15rem);
+  line-height: clamp(1.15rem, 2vw, 1.25rem);
+  color: var(--gray-color-1);
+  text-align: justify;
+}
+
+.btn {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-weight: 600;
+  color: var(--white-color);
+  background: var(--primary-light-color);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 15px 35px;
+  transition: var(--transition);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--gray-color);
+  }
+
+  &.altBtn {
+    background: var(--gray-color);
+
+    &:hover {
+      background: var(--primary-light-color-color);
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 500px) {
+  .btn {
+    padding: 15px 20px;
+  }
+}
