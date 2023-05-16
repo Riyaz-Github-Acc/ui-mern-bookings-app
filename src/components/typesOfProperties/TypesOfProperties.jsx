@@ -1,3 +1,6 @@
+// Custom Hook
+import useFetch from "../../hooks/useFetch";
+
 // Images
 import img1 from "../../assets/home/cat_img-1.jpeg";
 import img2 from "../../assets/home/cat_img-2.jpeg";
@@ -8,38 +11,32 @@ import img4 from "../../assets/home/cat_img-4.jpeg";
 import "./TypesOfProperties.scss";
 
 const TypesOfProperties = () => {
-  return (
-    <div className="typesOfProperties">
-      <div className="typeOfPropItem">
-        <img src={img1} alt="" className="typeOfPropImg" />
-        <div className="typeOfPropTitles">
-          <h3>Hotels</h3>
-          <h4>233 hotels</h4>
+    const { data, loading } = useFetch("http://localhost:8000/api/hotels/countByType");
+
+    const images = [img1, img2, img3, img4];
+
+    return (
+        <div className="typesOfProperties">
+            {loading ? (
+                "Loading Please Wait..."
+            ) : (
+                <>
+                    {data &&
+                        images.map((img, i) => (
+                            <div className="typeOfPropItem" key={i}>
+                                <img src={img} alt="" className="typeOfPropImg" />
+                                <div className="typeOfPropTitles">
+                                    <h3>{data[i]?.type}</h3>
+                                    <h4>
+                                        {data[i]?.count} {data[i]?.type}
+                                    </h4>
+                                </div>
+                            </div>
+                        ))}
+                </>
+            )}
         </div>
-      </div>
-      <div className="typeOfPropItem">
-        <img src={img2} alt="" className="typeOfPropImg" />
-        <div className="typeOfPropTitles">
-          <h3>Apartments</h3>
-          <h4>2331 hotels</h4>
-        </div>
-      </div>
-      <div className="typeOfPropItem">
-        <img src={img3} alt="" className="typeOfPropImg" />
-        <div className="typeOfPropTitles">
-          <h3>Resorts</h3>
-          <h4>2331 hotels</h4>
-        </div>
-      </div>
-      <div className="typeOfPropItem">
-        <img src={img4} alt="" className="typeOfPropImg" />
-        <div className="typeOfPropTitles">
-          <h3>Villas</h3>
-          <h4>2331 hotels</h4>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default TypesOfProperties;

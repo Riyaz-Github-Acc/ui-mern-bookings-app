@@ -1,38 +1,39 @@
 .typesOfProperties {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  justify-content: space-between;
-  gap: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: space-between;
+    gap: 20px;
 
-  .typeOfPropItem {
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
+    .typeOfPropItem {
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
 
-    .typeOfPropImg {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
+        .typeOfPropImg {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .typeOfPropTitles > h3 {
+            font-size: 18px;
+            color: var(--gray-color-1);
+            text-transform: capitalize;
+        }
+
+        .typeOfPropTitles > h4 {
+            font-size: 14px;
+            font-weight: 300;
+        }
     }
-
-    .typeOfPropTitles > h3 {
-      font-size: 18px;
-      color: var(--gray-color-1);
-    }
-
-    .typeOfPropTitles > h4 {
-      font-size: 14px;
-      font-weight: 300;
-    }
-  }
 }
 
 @media (max-width: 500px) {
-  .typesOfProperties {
-    .typeOfPropItem {
-      width: 250px;
-      margin: 0 auto;
+    .typesOfProperties {
+        .typeOfPropItem {
+            width: 250px;
+            margin: 0 auto;
+        }
     }
-  }
 }

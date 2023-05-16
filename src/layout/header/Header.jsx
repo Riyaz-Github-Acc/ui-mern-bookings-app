@@ -1,15 +1,12 @@
+// React Router Dom
+import { Link } from "react-router-dom";
+
 // Components
 import { Container } from "../../components/componentsIndex";
 
 // Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faBed,
-    faCar,
-    faPlane,
-    faTaxi,
-    faTrainSubway,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBed, faCar, faPlane, faTaxi, faTrainSubway } from "@fortawesome/free-solid-svg-icons";
 
 // CSS
 import "./Header.scss";
@@ -19,9 +16,9 @@ const Header = () => {
         <header>
             <Container>
                 <nav>
-                    <div className="logo">
+                    <Link to="/" className="logo">
                         <h1>MERN Bookings App</h1>
-                    </div>
+                    </Link>
 
                     <div className="auth">
                         <button className="btn navBtn">Register</button>
