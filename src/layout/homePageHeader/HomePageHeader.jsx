@@ -42,17 +42,17 @@ const HomePageHeader = () => {
     ]);
 
     // People
-    const [selectOptions, setSelectOptions] = useState({
+    const [options, setOptions] = useState({
         adult: 1,
         children: 0,
         room: 1,
     });
 
     const counterHandler = (name, operation) => {
-        setSelectOptions((prev) => {
+        setOptions((prev) => {
             return {
                 ...prev,
-                [name]: operation === "i" ? selectOptions[name] + 1 : selectOptions[name] - 1,
+                [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
             };
         });
     };
@@ -66,8 +66,8 @@ const HomePageHeader = () => {
     const { dispatch } = useContext(SearchContext);
 
     const searchHandler = () => {
-        dispatch({ type: "NEW_SEARCH", payload: { destination, dates, selectOptions } });
-        navigate("/hotels", { state: { destination, dates, selectOptions } });
+        dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
+        navigate("/hotels", { state: { destination, dates, options } });
     };
 
     return (
@@ -131,7 +131,7 @@ const HomePageHeader = () => {
                                         setOpenOptions(!openOptions);
                                     }}
                                     style={{ cursor: "pointer" }}>
-                                    {`${selectOptions.adult} Adult · ${selectOptions.children}  Children · ${selectOptions.room} Room`}
+                                    {`${options.adult} Adult · ${options.children}  Children · ${options.room} Room`}
                                 </span>
 
                                 {openOptions && (
@@ -142,12 +142,10 @@ const HomePageHeader = () => {
                                                 <button
                                                     className="counterBtn"
                                                     onClick={() => counterHandler("adult", "d")}
-                                                    disabled={selectOptions.adult <= 1}>
+                                                    disabled={options.adult <= 1}>
                                                     -
                                                 </button>
-                                                <span className="counter">
-                                                    {selectOptions.adult}
-                                                </span>
+                                                <span className="counter">{options.adult}</span>
                                                 <button
                                                     className="counterBtn"
                                                     onClick={() => counterHandler("adult", "i")}>
@@ -162,12 +160,10 @@ const HomePageHeader = () => {
                                                 <button
                                                     className="counterBtn"
                                                     onClick={() => counterHandler("children", "d")}
-                                                    disabled={selectOptions.children <= 0}>
+                                                    disabled={options.children <= 0}>
                                                     -
                                                 </button>
-                                                <span className="counter">
-                                                    {selectOptions.children}
-                                                </span>
+                                                <span className="counter">{options.children}</span>
                                                 <button
                                                     className="counterBtn"
                                                     onClick={() => counterHandler("children", "i")}>
@@ -182,12 +178,10 @@ const HomePageHeader = () => {
                                                 <button
                                                     className="counterBtn"
                                                     onClick={() => counterHandler("room", "d")}
-                                                    disabled={selectOptions.room <= 1}>
+                                                    disabled={options.room <= 1}>
                                                     -
                                                 </button>
-                                                <span className="counter">
-                                                    {selectOptions.room}
-                                                </span>
+                                                <span className="counter">{options.room}</span>
                                                 <button
                                                     className="counterBtn"
                                                     onClick={() => counterHandler("room", "i")}>

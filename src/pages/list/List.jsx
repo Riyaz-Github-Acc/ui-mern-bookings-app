@@ -34,7 +34,7 @@ const List = () => {
     const [openDate, setOpenDate] = useState(false);
 
     // Options
-    const [selectOptions, setSelectOptions] = useState(location.state.selectOptions);
+    const [options, setOptions] = useState(location.state.options);
 
     // Min
     const [min, setMin] = useState(undefined);
@@ -120,7 +120,7 @@ const List = () => {
                                 <input
                                     type="number"
                                     min={1}
-                                    placeholder={selectOptions.adult}
+                                    placeholder={options.adult}
                                     className="optionsInput"
                                 />
                             </div>
@@ -130,7 +130,7 @@ const List = () => {
                                 <input
                                     type="number"
                                     min={0}
-                                    placeholder={selectOptions.children}
+                                    placeholder={options.children}
                                     className="optionsInput"
                                 />
                             </div>
@@ -140,7 +140,7 @@ const List = () => {
                                 <input
                                     type="number"
                                     min={1}
-                                    placeholder={selectOptions.room}
+                                    placeholder={options.room}
                                     className="optionsInput"
                                 />
                             </div>
