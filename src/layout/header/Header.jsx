@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 // Components
-import { Container } from "../../components/componentsIndex";
+import { Container } from "../../components/ComponentsIndex";
 
 // Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

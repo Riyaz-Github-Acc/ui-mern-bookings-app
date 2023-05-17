@@ -1,8 +1,11 @@
 // React Hooks
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 // React Router Dom
 import { useNavigate } from "react-router-dom";
+
+// Context
+import { SearchContext } from "../../context/SearchContex";
 
 // React Date Range
 import { DateRange } from "react-date-range";
@@ -18,7 +21,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBed, faCalendarDays, faPerson } from "@fortawesome/free-solid-svg-icons";
 
 // Components
-import { Container } from "../../components/componentsIndex";
+import { Container } from "../../components/ComponentsIndex";
 
 // CSS
 import "./HomePageHeader.scss";
@@ -30,7 +33,7 @@ const HomePageHeader = () => {
     // Date Picker
     const [openDate, setOpenDate] = useState(false);
 
-    const [date, setDate] = useState([
+    const [dates, setDates] = useState([
         {
             startDate: new Date(),
             endDate: new Date(),
@@ -59,8 +62,12 @@ const HomePageHeader = () => {
     // Search
     const navigate = useNavigate();
 
+    // Context
+    const { dispatch } = useContext(SearchContext);
+
     const searchHandler = () => {
-        navigate("/hotels", { state: { destination, date, selectOptions } });
+        dispatch({ type: "NEW_SEARCH", payload: { destination, dates, selectOptions } });
+        navigate("/hotels", { state: { destination, dates, selectOptions } });
     };
 
     return (
@@ -98,8 +105,8 @@ const HomePageHeader = () => {
                                         setOpenDate(!openDate);
                                     }}
                                     style={{ cursor: "pointer" }}>
-                                    {`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
-                                        date[0].endDate,
+                                    {`${format(dates[0].startDate, "dd/MM/yyyy")} to ${format(
+                                        dates[0].endDate,
                                         "dd/MM/yyyy"
                                     )}`}
                                 </span>
@@ -107,9 +114,9 @@ const HomePageHeader = () => {
                                 {openDate && (
                                     <DateRange
                                         editableDateInputs={true}
-                                        onChange={(item) => setDate([item.selection])}
+                                        onChange={(item) => setDates([item.selection])}
                                         moveRangeOnFirstSelection={false}
-                                        ranges={date}
+                                        ranges={dates}
                                         minDate={new Date()}
                                         className="datePicker"
                                     />

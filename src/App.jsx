@@ -2,10 +2,10 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 // Layout
-import { Header, Footer } from "./layout/layoutIndex";
+import { Header, Footer } from "./layout/LayoutIndex";
 
 // Pages
-import { Home, Hotel, List } from "./pages/pagesIndex";
+import { Home, Hotel, List } from "./pages/PagesIndex";
 
 // CSS
 import "./App.scss";
