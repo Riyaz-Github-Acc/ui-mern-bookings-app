@@ -1,60 +1,94 @@
 // React Router Dom
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Components
 import { Container } from "../../components/ComponentsIndex";
 
 // Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBed, faCar, faPlane, faTaxi, faTrainSubway } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBed,
+  faCar,
+  faPlane,
+  faTaxi,
+  faTrainSubway,
+} from "@fortawesome/free-solid-svg-icons";
 
 // CSS
 import "./Header.scss";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
-    return (
-        <header>
-            <Container>
-                <nav>
-                    <Link to="/" className="logo">
-                        <h1>MERN Bookings App</h1>
-                    </Link>
+  const { user, dispatch } = useContext(AuthContext);
 
-                    <div className="auth">
-                        <button className="btn navBtn">Register</button>
-                        <button className="btn navBtn">Login</button>
-                    </div>
-                </nav>
+  const navigate = useNavigate();
 
-                <menu>
-                    <div className="link active">
-                        <FontAwesomeIcon icon={faBed} />
-                        <span>Hotels</span>
-                    </div>
+  const logoutHandler = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("user");
+    dispatch({ type: "LOGOUT" });
+    navigate("/login");
+  };
 
-                    <div className="link">
-                        <FontAwesomeIcon icon={faPlane} />
-                        <span>Flights</span>
-                    </div>
+  return (
+    <header>
+      <Container>
+        <nav>
+          <Link to="/" className="logo">
+            <h1>Hotel Booking App</h1>
+          </Link>
 
-                    <div className="link">
-                        <FontAwesomeIcon icon={faCar} />
-                        <span>Car Rentals</span>
-                    </div>
+          {user ? (
+            <div className="loggedIn">
+              <div className="userLogin">
+                <img src={user.img} alt="Avatar" className="userAvatar" />
+              </div>
+              <button className="logoutBtn btn" onClick={logoutHandler}>
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="auth">
+              <Link to="/register">
+                <button className="btn navBtn">Register</button>
+              </Link>
+              <Link to="/login">
+                <button className="btn navBtn">Login</button>
+              </Link>
+            </div>
+          )}
+        </nav>
 
-                    <div className="link">
-                        <FontAwesomeIcon icon={faTrainSubway} />
-                        <span>Trains</span>
-                    </div>
+        <menu>
+          <div className="link active">
+            <FontAwesomeIcon icon={faBed} />
+            <span>Hotels</span>
+          </div>
 
-                    <div className="link">
-                        <FontAwesomeIcon icon={faTaxi} />
-                        <span>Airport Taxis</span>
-                    </div>
-                </menu>
-            </Container>
-        </header>
-    );
+          <div className="link">
+            <FontAwesomeIcon icon={faPlane} />
+            <span>Flights</span>
+          </div>
+
+          <div className="link">
+            <FontAwesomeIcon icon={faCar} />
+            <span>Car Rentals</span>
+          </div>
+
+          <div className="link">
+            <FontAwesomeIcon icon={faTrainSubway} />
+            <span>Trains</span>
+          </div>
+
+          <div className="link">
+            <FontAwesomeIcon icon={faTaxi} />
+            <span>Airport Taxis</span>
+          </div>
+        </menu>
+      </Container>
+    </header>
+  );
 };
 
 export default Header;

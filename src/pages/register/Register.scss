@@ -1,0 +1,47 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin: 50px 0;
+
+  .profile-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+
+    label {
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  input {
+    width: clamp(15rem, 75vw, 35rem);
+    height: 50px;
+    font-size: 16px;
+    border: 1px solid var(--gray-color);
+    outline: none;
+    padding: 5px 15px;
+  }
+
+  .btn {
+    width: clamp(15rem, 75vw, 20rem);
+  }
+}

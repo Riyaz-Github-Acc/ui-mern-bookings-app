@@ -15,17 +15,43 @@ header {
       cursor: pointer;
     }
 
-    .auth {
+    .loggedIn {
       display: flex;
       align-items: center;
       gap: 15px;
 
-      .navBtn {
-        background: var(--secondary-color);
+      .userLogin {
+        display: flex;
+        align-items: center;
+        gap: 15px;
 
-        &:hover {
-          background: var(--gray-color);
+        .userAvatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
         }
+      }
+
+      .logoutBtn {
+        color: var(--white-color);
+        background: var(--gray-color);
+        padding: 10px 25px;
+        border-radius: 5px;
+      }
+    }
+
+    .auth {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .navBtn {
+      background: var(--secondary-color) !important;
+
+      &:hover {
+        background: var(--gray-color);
       }
     }
   }
@@ -64,14 +90,18 @@ header {
   header {
     .container {
       nav {
-        .auth {
-          gap: 8px;
-        }
-      }
+        .loggedIn {
+          gap: 5px;
 
-      menu {
-        gap: 10px;
-        row-gap: 5px;
+          .auth {
+            gap: 8px;
+          }
+        }
+
+        menu {
+          gap: 10px;
+          row-gap: 5px;
+        }
       }
     }
   }

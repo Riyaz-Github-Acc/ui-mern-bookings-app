@@ -4,11 +4,14 @@ import App from "./App.jsx";
 
 // Context
 import { SearchContextProvider } from "./context/SearchContex.jsx";
+import { AuthContextProvider } from "./context/AuthContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <SearchContextProvider>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
-    </SearchContextProvider>
+    <React.StrictMode>
+        <AuthContextProvider>
+            <SearchContextProvider>
+                <App />
+            </SearchContextProvider>
+        </AuthContextProvider>
+    </React.StrictMode>
 );

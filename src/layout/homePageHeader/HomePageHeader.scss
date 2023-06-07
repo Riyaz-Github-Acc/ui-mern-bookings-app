@@ -41,6 +41,7 @@
         padding: 10px 0;
 
         .searchItem {
+          position: relative;
           display: flex;
           align-items: center;
           gap: 10px;
@@ -158,8 +159,12 @@
           padding: 10px 100px;
 
           .searchItem {
+            .datePicker,
+            .options {
+              top: 25px;
+            }
+
             .datePicker {
-              top: 45px;
               left: 50%;
               transform: translateX(-50%);
             }
@@ -179,14 +184,7 @@
         .searchField {
           bottom: -80px;
           flex-direction: column;
-          align-items: start;
-          padding: 10px 0px 10px 50px;
-
-          .searchItem {
-            .datePicker {
-              top: 80px;
-            }
-          }
+          padding: 10px 0px;
         }
       }
     }
