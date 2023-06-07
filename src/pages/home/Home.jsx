@@ -1,13 +1,13 @@
 // Layout
-import { HomePageHeader } from "../../layout/LayoutIndex";
+import { HomePageHeader } from "../../layout/index";
 
 // Components
 import {
   Container,
   FeaturedProperties,
-  TypeOfProperties,
+  TypesOfProperties,
   UniqueProperties,
-} from "../../components/ComponentsIndex";
+} from "../../components/index";
 
 // CSS
 import "./Home.scss";
@@ -20,7 +20,7 @@ const Home = () => {
         <Container>
           <FeaturedProperties />
           <h2 className="propertyTitle">Browse By Property Type</h2>
-          <TypeOfProperties />
+          <TypesOfProperties />
           <h2 className="propertyTitle">Stay At Our Top Unique Properties</h2>
           <UniqueProperties />
         </Container>

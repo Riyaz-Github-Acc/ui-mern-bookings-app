@@ -2,7 +2,7 @@
 import { Link, useNavigate } from "react-router-dom";
 
 // Components
-import { Container } from "../../components/ComponentsIndex";
+import { Container } from "../../components";
 
 // Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

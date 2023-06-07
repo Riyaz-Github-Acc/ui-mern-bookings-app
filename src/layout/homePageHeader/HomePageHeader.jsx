@@ -25,7 +25,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 // Components
-import { Container } from "../../components/ComponentsIndex";
+import { Container } from "../../components";
 
 // CSS
 import "./HomePageHeader.scss";

@@ -3,7 +3,7 @@
 import { useContext, useState } from "react";
 
 // Components
-import { Container } from "../../components/ComponentsIndex";
+import { Container } from "../../components/index";
 
 // Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

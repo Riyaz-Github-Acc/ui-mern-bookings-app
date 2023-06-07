@@ -9,7 +9,7 @@ import useFetch from "../../hooks/useFetch";
 import { useLocation } from "react-router-dom";
 
 // Components
-import { Container, SearchItem } from "../../components/ComponentsIndex";
+import { Container, SearchItem } from "../../components/index";
 
 // React Date Range
 import { DateRange } from "react-date-range";
