@@ -146,7 +146,7 @@ const Hotel = () => {
                 </div>
 
                 <div className="hotelDetailsPrice">
-                  <h3>Perfect for a {days}-Night Stay!</h3>
+                  <h3>Perfect for a {days} - Night Stay!</h3>
                   <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   </p>
