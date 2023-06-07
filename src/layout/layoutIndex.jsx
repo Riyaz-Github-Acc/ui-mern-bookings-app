@@ -1,3 +1,5 @@
-export { default as Header } from "./header/Header";
-export { default as Footer } from "./footer/Footer";
-export { default as HomePageHeader } from "./homePageHeader/HomePageHeader";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
+import HomePageHeader from "./homePageHeader/HomePageHeader";
+
+export { Header, Footer, HomePageHeader };

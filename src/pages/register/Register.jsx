@@ -47,7 +47,7 @@ const Register = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:8000/api/auth/register",
+        "https://hotel-booking-app-api.onrender.com/api/auth/register",
         newUser
       );
       navigate("/login");

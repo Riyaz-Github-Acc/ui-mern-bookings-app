@@ -12,7 +12,7 @@ import "./TypesOfProperties.scss";
 
 const TypesOfProperties = () => {
   const { data, loading } = useFetch(
-    "http://localhost:8000/api/hotels/countByType"
+    "https://hotel-booking-app-api.onrender.com/api/hotels/countByType"
   );
 
   const images = [img1, img2, img3, img4];

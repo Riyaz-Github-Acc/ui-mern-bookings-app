@@ -13,7 +13,7 @@ import "./Reserve.scss";
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { data, loading, error } = useFetch(
-    `http://localhost:8000/api/hotels//room/${hotelId}`
+    `https://hotel-booking-app-api.onrender.com/api/hotels//room/${hotelId}`
   );
   const { dates } = useContext(SearchContext);
 
@@ -60,7 +60,7 @@ const Reserve = ({ setOpen, hotelId }) => {
       await Promise.all(
         selectedRooms.map((roomId) => {
           const res = axios.put(
-            `http://localhost:8000/api/rooms/availability/${roomId}`,
+            `https://hotel-booking-app-api.onrender.com/api/rooms/availability/${roomId}`,
             {
               dates: alldates,
             }

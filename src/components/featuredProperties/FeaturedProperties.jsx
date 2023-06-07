@@ -11,7 +11,7 @@ import "./FeaturedProperties.scss";
 
 const FeaturedProperties = () => {
   const { data, loading } = useFetch(
-    "http://localhost:8000/api/hotels/countByCity?cities=london,berlin,mumbai"
+    "https://hotel-booking-app-api.onrender.com/api/hotels/countByCity?cities=london,berlin,mumbai"
   );
 
   return (

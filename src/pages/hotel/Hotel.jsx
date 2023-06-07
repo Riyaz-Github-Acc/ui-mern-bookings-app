@@ -34,7 +34,7 @@ const Hotel = () => {
   const { user } = useContext(AuthContext);
 
   const { data, loading, error } = useFetch(
-    `http://localhost:8000/api/hotels/find/${id}`
+    `https://hotel-booking-app-api.onrender.com/api/hotels/find/${id}`
   );
 
   const sliderHandler = (i) => {
