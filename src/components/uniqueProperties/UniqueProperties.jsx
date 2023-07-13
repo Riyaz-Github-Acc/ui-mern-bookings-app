@@ -1,12 +1,6 @@
 // Custom Hook
 import useFetch from "../../hooks/useFetch";
 
-// Images
-// import img1 from "../../assets/home/unique_img-1.jpg";
-// import img2 from "../../assets/home/unique_img-2.jpg";
-// import img3 from "../../assets/home/unique_img-3.jpg";
-// import img4 from "../../assets/home/unique_img-4.jpg";
-
 // CSS
 import "./UniqueProperties.scss";
 

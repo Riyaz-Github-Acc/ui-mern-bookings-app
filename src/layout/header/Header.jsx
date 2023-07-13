@@ -1,8 +1,10 @@
-// React Router Dom
+// React
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 // Components
 import { Container } from "../../components";
+import { AuthContext } from "../../context/AuthContext";
 
 // Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,8 +18,6 @@ import {
 
 // CSS
 import "./Header.scss";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
   const { user, dispatch } = useContext(AuthContext);
@@ -42,7 +42,9 @@ const Header = () => {
           {user ? (
             <div className="loggedIn">
               <div className="userLogin">
-                <img src={user.img} alt="Avatar" className="userAvatar" />
+                <Link to={`/update/${user?._id}`}>
+                  <img src={user.img} alt="Avatar" className="userAvatar" />
+                </Link>
               </div>
               <button className="logoutBtn btn" onClick={logoutHandler}>
                 Logout

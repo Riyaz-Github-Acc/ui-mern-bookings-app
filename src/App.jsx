@@ -5,6 +5,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Header, Footer } from "./layout/index";
 
 // Pages
+import Update from "./components/Update";
 import { Home, Hotel, List, Login, Register } from "./pages/index";
 
 // CSS
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+
+      {
+        path: "/update/:id",
+        element: <Update />,
       },
     ],
   },
